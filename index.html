@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Morgan | Software Engineer - Data Science</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap">
+    <style>
+        :root {
+            --primary: #0a66c2;
+            --primary-dark: #084484;
+            --secondary: #313335;
+            --accent: #00a0dc;
+            --light: #f3f6f8;
+            --dark: #1d2226;
+            --text: #333333;
+            --text-light: #666666;
+            --border: #e0e0e0;
+            --success: #28a745;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text);
+            background-color: #fafafa;
+            line-height: 1.6;
+            padding-top: 70px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            padding: 0.8rem 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary) !important;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: var(--secondary) !important;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            background-color: rgba(10, 102, 194, 0.1);
+            color: var(--primary) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(10, 102, 194, 0.1) 0%, rgba(255, 255, 255, 1) 100%);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.3rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .hero h2 {
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            font-weight: 400;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-img {
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .social-icons {
+            margin-top: 2rem;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            margin-right: 1rem;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-weight: 700;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        /* Updated Card Styles - Added transition property */
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease, transform 0.3s ease; /* Added transition property */
+            height: 100%;
+            overflow: hidden;
+            transform: scale(1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-color: rgba(10, 102, 194, 0.2);
+        }
+
+        .card-img-top {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(10, 102, 194, 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 0.25rem;
+        }
+
+        /* Updated Experience Cards - Now using standard card style */
+        .experience-card {
+            margin-bottom: 2rem;
+        }
+
+        .experience-card .card {
+            border-left: 4px solid var(--primary);
+        }
+
+        .experience-date {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Education Styles */
+        .education-card {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(10, 102, 194, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            font-size: 2rem;
+        }
+
+        .education-details h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .education-details .text-primary {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* Footer - Increased size */
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 6rem 0 4rem; /* Increased padding */
+        }
+
+        .footer h5 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            display: block;
+            margin-bottom: 0.8rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-content {
+            min-height: 300px; /* Added minimum height */
+        }
+
+        /* Animation */
+        .animate-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .animate-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* View More Button */
+        .view-more-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(10, 102, 194, 0.25);
+        }
+
+        .view-more-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(10, 102, 194, 0.35);
+            color: white;
+        }
+
+        .view-more-btn i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .view-more-btn:hover i {
+            transform: translateX(4px);
+        }
+
+        /* Hidden Items */
+        .hidden-item {
+            display: none;
+        }
+
+        /* Contact Section */
+        .contact-form .form-control {
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 0.8rem 1rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.2rem rgba(10, 102, 194, 0.25);
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(10, 102, 194, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .education-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .education-icon {
+                margin-right: 0;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .hero {
+                padding: 3rem 0;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .contact-form-wrapper {
+                padding-right: 30px;
+            }
+
+            .contact-info-wrapper {
+                padding-left: 30px;
+            }
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand" href="#">Nur Ahmed</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Image column (appears first on mobile) -->
+                <div class="col-lg-6 text-center order-lg-2 animate-item">
+                    <img src="Candidate 1.jpg" alt="Alex Morgan" class="hero-img img-fluid">
+                </div>
+                
+                <!-- Content column -->
+                <div class="col-lg-6 hero-content order-lg-1">
+                    <h1 class="animate-item">Nur Ahmed</h1>
+                    <h2 class="animate-item delay-1">Artificial Intelligence | Data Science | Software Engineering</h2>
+                    <p class="animate-item delay-2">Software Engineering student specializing in Data Science. Passionate about transforming complex data into actionable insights and building intelligent systems that solve real-world problems.</p>
+                    <div class="animate-item delay-3">
+                        <a href="#projects" class="btn btn-primary me-2">View Projects</a>
+                        <a href="#contact" class="btn btn-outline-primary">Contact Me</a>
+                    </div>
+                    <div class="social-icons animate-item delay-3">
+                        <a href="https://www.linkedin.com/in/nurahmed12/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/nurahmed12" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.kaggle.com/nurahmed12" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+                        <a href="mailto: officialme.nurahmed@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://wa.link/iagj1j" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>My Projects</h2>
+                </div>
+                <p class="lead">Showcasing innovative solutions to complex problems</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 animate-item">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img-top img-fluid" alt="Customer Churn Prediction dashboard">
+                        <div class="card-body">
+                            <h5 class="card-title">Customer Churn Prediction</h5>
+                            <p class="card-text">Developed a machine learning model that predicts customer churn with 92% accuracy, helping businesses reduce attrition by 25%.</p>
+                            <div class="mt-3">
+                                <span class="tag">Python</span>
+                                <span class="tag">Scikit-learn</span>
+                                <span class="tag">XGBoost</span>
+                                <span class="tag">TensorFlow</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <a href="#" class="btn btn-sm btn-primary" aria-label="View details for Customer Churn Prediction">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 animate-item delay-1">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" class="card-img-top img-fluid" alt="Fraud detection analytics">
+                        <div class="card-body">
+                            <h5 class="card-title">Real-time Fraud Detection</h5>
+                            <p class="card-text">Built a real-time fraud detection system using stream processing that identifies suspicious transactions with 99.3% precision.</p>
+                            <div class="mt-3">
+                                <span class="tag">Apache Kafka</span>
+                                <span class="tag">Spark Streaming</span>
+                                <span class="tag">Neural Networks</span>
+                                <span class="tag">AWS</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <a href="#" class="btn btn-sm btn-primary" aria-label="View details for Real-time Fraud Detection">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 animate-item delay-2">
+                        <img src="https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img-top img-fluid" alt="Healthcare recommendation interface">
+                        <div class="card-body">
+                            <h5 class="card-title">Healthcare Recommendation System</h5>
+                            <p class="card-text">Created a personalized treatment recommendation engine that improved patient outcomes by 30% through data-driven insights.</p>
+                            <div class="mt-3">
+                                <span class="tag">Recommender Systems</span>
+                                <span class="tag">NLP</span>
+                                <span class="tag">Flask</span>
+                                <span class="tag">Docker</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <a href="#" class="btn btn-sm btn-primary" aria-label="View details for Healthcare Recommendation System">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 hidden-item">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img-top img-fluid" alt="Object detection visualization">
+                        <div class="card-body">
+                            <h5 class="card-title">Object Detection System</h5>
+                            <p class="card-text">Developed a real-time object detection system using YOLOv5 for autonomous vehicles, achieving 95% accuracy.</p>
+                            <div class="mt-3">
+                                <span class="tag">Computer Vision</span>
+                                <span class="tag">YOLOv5</span>
+                                <span class="tag">OpenCV</span>
+                                <span class="tag">PyTorch</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <a href="#" class="btn btn-sm btn-primary" aria-label="View details for Object Detection System">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 hidden-item">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img-top img-fluid" alt="Financial data dashboard">
+                        <div class="card-body">
+                            <h5 class="card-title">Interactive Data Dashboard</h5>
+                            <p class="card-text">Created an interactive dashboard for financial data analysis using D3.js and React, improving data interpretation by 40%.</p>
+                            <div class="mt-3">
+                                <span class="tag">React</span>
+                                <span class="tag">D3.js</span>
+                                <span class="tag">Redux</span>
+                                <span class="tag">Chart.js</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <a href="#" class="btn btn-sm btn-primary" aria-label="View details for Interactive Data Dashboard">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 hidden-item">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img-top img-fluid" alt="Cloud architecture diagram">
+                        <div class="card-body">
+                            <h5 class="card-title">Cloud Migration Solution</h5>
+                            <p class="card-text">Designed and implemented a cloud migration strategy for legacy systems, reducing operational costs by 35%.</p>
+                            <div class="mt-3">
+                                <span class="tag">AWS</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">Kubernetes</span>
+                                <span class="tag">Terraform</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <a href="#" class="btn btn-sm btn-primary" aria-label="View details for Cloud Migration Solution">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button id="viewProjectsBtn" class="view-more-btn" data-more="View All Projects" data-less="Show Less">
+                    View All Projects <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>Publications</h2>
+                </div>
+                <p class="lead">Research contributions and academic writings</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card animate-item">
+                        <div class="card-body">
+                            <h5 class="card-title">Advanced Sentiment Analysis Using Transformer Networks</h5>
+                            <p class="text-primary">International Conference on Data Science, 2023</p>
+                            <p class="card-text">Proposed a novel approach to sentiment analysis using transformer networks that achieved state-of-the-art results on benchmark datasets.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-2" aria-label="Read paper: Advanced Sentiment Analysis Using Transformer Networks">Read Paper</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="card animate-item delay-1">
+                        <div class="card-body">
+                            <h5 class="card-title">Optimizing Real-time Data Processing with Stream Architectures</h5>
+                            <p class="text-primary">Journal of Big Data Analytics, 2022</p>
+                            <p class="card-text">Presented a framework for optimizing real-time data processing that reduces latency by 35% while maintaining data integrity.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-2" aria-label="Read paper: Optimizing Real-time Data Processing with Stream Architectures">Read Paper</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4 hidden-item">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Deep Learning for Medical Image Segmentation</h5>
+                            <p class="text-primary">IEEE Transactions on Medical Imaging, 2022</p>
+                            <p class="card-text">Developed a novel deep learning architecture for medical image segmentation that outperformed existing methods by 12% in accuracy.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-2" aria-label="Read paper: Deep Learning for Medical Image Segmentation">Read Paper</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4 hidden-item">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Blockchain-based Data Integrity Verification</h5>
+                            <p class="text-primary">ACM Conference on Computer and Communications Security, 2021</p>
+                            <p class="card-text">Designed a blockchain solution for verifying data integrity in distributed systems with 99.9% reliability.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-2" aria-label="Read paper: Blockchain-based Data Integrity Verification">Read Paper</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button id="viewPublicationsBtn" class="view-more-btn" data-more="View All Publications" data-less="Show Less">
+                    View All Publications <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>Professional Experience</h2>
+                </div>
+                <p class="lead">Building expertise through practical application</p>
+            </div>
+
+            <div class="row">
+                <!-- Updated Experience Section - Now using card style -->
+                <div class="col-lg-6 mb-4 experience-card animate-item">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Science Intern</h5>
+                            <p class="text-primary">Tech Innovations Inc.</p>
+                            <p class="experience-date">May 2023 - Present</p>
+                            <p class="card-text">Developed machine learning models to optimize customer segmentation, resulting in a 15% increase in marketing campaign effectiveness. Implemented data pipelines processing 2TB of daily data.</p>
+                            <div class="mt-3">
+                                <span class="tag">Python</span>
+                                <span class="tag">PySpark</span>
+                                <span class="tag">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4 experience-card animate-item delay-1">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Software Engineering Intern</h5>
+                            <p class="text-primary">Global Solutions Ltd.</p>
+                            <p class="experience-date">Jun 2022 - Aug 2022</p>
+                            <p class="card-text">Contributed to the development of a scalable microservices architecture, reducing system latency by 40%. Implemented automated testing that improved code coverage from 65% to 92%.</p>
+                            <div class="mt-3">
+                                <span class="tag">Java</span>
+                                <span class="tag">Spring Boot</span>
+                                <span class="tag">Kubernetes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4 experience-card hidden-item">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Research Assistant</h5>
+                            <p class="text-primary">University Data Lab</p>
+                            <p class="experience-date">Sep 2021 - May 2022</p>
+                            <p class="card-text">Researched and implemented novel NLP techniques for sentiment analysis. Co-authored a paper published in the International Conference on Data Science.</p>
+                            <div class="mt-3">
+                                <span class="tag">NLP</span>
+                                <span class="tag">TensorFlow</span>
+                                <span class="tag">Research</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4 experience-card hidden-item">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Analyst Intern</h5>
+                            <p class="text-primary">Market Insights Corp</p>
+                            <p class="experience-date">Jan 2021 - Apr 2021</p>
+                            <p class="card-text">Conducted market analysis and developed predictive models for customer behavior, improving sales forecasting accuracy by 22%.</p>
+                            <div class="mt-3">
+                                <span class="tag">SQL</span>
+                                <span class="tag">Tableau</span>
+                                <span class="tag">Predictive Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button id="viewExperienceBtn" class="view-more-btn" data-more="View Full Experience" data-less="Show Less">
+                    View Full Experience <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>Education</h2>
+                </div>
+                <p class="lead">Academic achievements and qualifications</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="education-card animate-item">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                        </div>
+                        <div class="education-details">
+                            <h4>Bachelor of Science in Software Engineering</h4>
+                            <span class="text-primary">University of Technology</span>
+                            <p>Specialization: Data Science</p>
+                            <p>2020 - 2024 | GPA: 3.9/4.0</p>
+                        </div>
+                    </div>
+
+                    <div class="education-card animate-item delay-1">
+                        <div class="education-icon">
+                            <i class="fas fa-certificate" aria-hidden="true"></i>
+                        </div>
+                        <div class="education-details">
+                            <h4>Data Science Certificate</h4>
+                            <span class="text-primary">Stanford University Online</span>
+                            <p>Specialization: Machine Learning & AI</p>
+                            <p>2022 | Grade: Distinction</p>
+                        </div>
+                    </div>
+
+                    <div class="education-card animate-item delay-2">
+                        <div class="education-icon">
+                            <i class="fas fa-book" aria-hidden="true"></i>
+                        </div>
+                        <div class="education-details">
+                            <h4>Advanced Algorithms Course</h4>
+                            <span class="text-primary">MIT OpenCourseWare</span>
+                            <p>Specialization: Algorithm Design & Analysis</p>
+                            <p>2021 | Completed with Honors</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>Certifications</h2>
+                </div>
+                <p class="lead">Professional credentials and qualifications</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 animate-item">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fab fa-aws fa-3x text-primary me-3" aria-hidden="true"></i>
+                                <div>
+                                    <h5 class="card-title mb-0">AWS Certified Data Analytics</h5>
+                                    <p class="text-muted mb-0">Amazon Web Services</p>
+                                </div>
+                            </div>
+                            <p class="card-text">Specialty certification validating expertise in designing and implementing AWS services to derive value from data.</p>
+                            <p class="text-success"><i class="fas fa-calendar-alt me-2" aria-hidden="true"></i>Issued: Sep 2023 | Expires: Sep 2026</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 animate-item delay-1">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fab fa-google fa-3x text-primary me-3" aria-hidden="true"></i>
+                                <div>
+                                    <h5 class="card-title mb-0">Google Cloud Professional Data Engineer</h5>
+                                    <p class="text-muted mb-0">Google Cloud</p>
+                                </div>
+                            </div>
+                            <p class="card-text">Certification demonstrating the ability to design, build, and manage data processing systems on Google Cloud.</p>
+                            <p class="text-success"><i class="fas fa-calendar-alt me-2" aria-hidden="true"></i>Issued: May 2023 | Expires: May 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 animate-item delay-2">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-database fa-3x text-primary me-3" aria-hidden="true"></i>
+                                <div>
+                                    <h5 class="card-title mb-0">TensorFlow Developer Certificate</h5>
+                                    <p class="text-muted mb-0">TensorFlow</p>
+                                </div>
+                            </div>
+                            <p class="card-text">Validation of machine learning skills using TensorFlow to build and train models to solve real-world problems.</p>
+                            <p class="text-success"><i class="fas fa-calendar-alt me-2" aria-hidden="true"></i>Issued: Feb 2023 | Expires: Feb 2026</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 hidden-item">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fab fa-microsoft fa-3x text-primary me-3" aria-hidden="true"></i>
+                                <div>
+                                    <h5 class="card-title mb-0">Azure Data Scientist Associate</h5>
+                                    <p class="text-muted mb-0">Microsoft</p>
+                                </div>
+                            </div>
+                            <p class="card-text">Certification for designing and implementing data science solutions using Azure Machine Learning.</p>
+                            <p class="text-success"><i class="fas fa-calendar-alt me-2" aria-hidden="true"></i>Issued: Nov 2022 | Expires: Nov 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 hidden-item">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-chart-line fa-3x text-primary me-3" aria-hidden="true"></i>
+                                <div>
+                                    <h5 class="card-title mb-0">Data Science Professional Certificate</h5>
+                                    <p class="text-muted mb-0">IBM</p>
+                                </div>
+                            </div>
+                            <p class="card-text">Professional certificate covering the full data science methodology and hands-on practice.</p>
+                            <p class="text-success"><i class="fas fa-calendar-alt me-2" aria-hidden="true"></i>Issued: Aug 2022 | No Expiration</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button id="viewCertificationsBtn" class="view-more-btn" data-more="View All Certifications" data-less="Show Less">
+                    View All Certifications <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>Contact Me</h2>
+                </div>
+                <p class="lead">Get in touch for collaboration or opportunities</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 contact-form-wrapper">
+                    <form class="contact-form" action="https://formsubmit.co/officialme.nurahmed@gmail.com" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="nameInput" class="form-label visually-hidden">Your Name</label>
+                                    <input type="text" class="form-control" id="nameInput" name="name" placeholder="Your Name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="emailInput" class="form-label visually-hidden">Your Email</label>
+                                    <input type="email" class="form-control" id="emailInput" name="email" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subjectInput" class="form-label visually-hidden">Subject</label>
+                            <input type="text" class="form-control" id="subjectInput" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="messageTextarea" class="form-label visually-hidden">Your Message</label>
+                            <textarea class="form-control" id="messageTextarea" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-lg-6 contact-info-wrapper mt-5 mt-lg-0">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h5>Location</h5>
+                                <p>Narsingdi, Dhaka, Bangladesh</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h5>Email</h5>
+                                <p>officialme.nurahmed@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h5>Phone</h5>
+                                <p>+880 1868039773</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h5>WhatsApp</h5>
+                                <p>+880 1868039773</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="social-icons">
+                                <a href="https://www.linkedin.com/in/nurahmed12/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://github.com/nurahmed12" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="https://www.kaggle.com/nurahmed12" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+                                <a href="mailto: officialme.nurahmed@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                <a href="https://wa.link/iagj1j" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row footer-content">
+                <div class="col-lg-4 mb-4">
+                    <h5>Alex Morgan</h5>
+                    <p class="mt-3">Software Engineering student specializing in Data Science. Passionate about leveraging technology to solve complex problems and create meaningful impact.</p>
+                    <div class="social-icons mt-4">
+                            <a href="https://www.linkedin.com/in/nurahmed12/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/nurahmed12" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.kaggle.com/nurahmed12" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+                            <a href="mailto: officialme.nurahmed@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="https://wa.link/iagj1j" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Navigation</h5>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#publications">Publications</a>
+                        <a href="#experience">Experience</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Resources</h5>
+                    <div class="footer-links">
+                        <a href="#certifications">Certifications</a>
+                        <a href="#education">Education</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <h5>Contact Information</h5>
+                    <div class="footer-links">
+                        <p><i class="fas fa-envelope me-2" aria-hidden="true"></i> officialme.nurahmed@gmail.com</p>
+                        <p><i class="fas fa-phone me-2" aria-hidden="true"></i> +880 1868039773</p>
+                        <p><i class="fab fa-whatsapp me-2" aria-hidden="true"></i> +880 1868039773</p>
+                        <p><i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i> Narsingdi, Dhaka, Bangladesh</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation on scroll
+            const animatedElements = document.querySelectorAll('.animate-item');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    entry.target.classList.remove('animate-item');
+                    observer.unobserve(entry.target);       // optional, stops observing once done
+                    }
+
+                });
+            }, { threshold: 0.1 });
+
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Smooth scrolling for navigation
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - navbarHeight,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active nav link
+                        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // Navbar active state on scroll
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+            function updateActiveNavLink() {
+                let currentActive = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - navbarHeight - 50;
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        currentActive = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentActive}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveNavLink);
+            updateActiveNavLink();
+
+            // View more toggle functionality
+            function setupViewMoreToggle(buttonId, hiddenItemSelector) {
+                const button = document.getElementById(buttonId);
+                const items = document.querySelectorAll(hiddenItemSelector);
+                const moreText = button.dataset.more;
+                const lessText = button.dataset.less;
+
+                if (button && items.length > 0) {
+                    let isShowingAll = false;
+
+                    button.addEventListener('click', function() {
+                        isShowingAll = !isShowingAll;
+                        
+                        items.forEach(item => {
+                            item.classList.toggle('hidden-item');
+                        });
+                        
+                        const icon = button.querySelector('i');
+                        if (isShowingAll) {
+                            button.innerHTML = `${lessText} <i class="fas fa-arrow-up"></i>`;
+                        } else {
+                            button.innerHTML = `${moreText} <i class="fas fa-arrow-right"></i>`;
+                        }
+                    });
+                }
+            }
+
+            setupViewMoreToggle('viewProjectsBtn', '#projects .hidden-item');
+            setupViewMoreToggle('viewPublicationsBtn', '#publications .hidden-item');
+            setupViewMoreToggle('viewExperienceBtn', '#experience .hidden-item');
+            setupViewMoreToggle('viewCertificationsBtn', '#certifications .hidden-item');
+        });
+    </script>
+</body>
+</html>
