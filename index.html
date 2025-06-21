@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nur Ahmed</title>
+    <title>Nur Ahmed - Data Science Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap">
@@ -121,6 +121,16 @@
             margin-top: 2rem;
         }
 
+        .edu-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 50%;
+            background-color: white;
+            padding: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
         .social-icons a {
             display: inline-flex;
             align-items: center;
@@ -176,12 +186,12 @@
             margin-bottom: 4rem;
         }
 
-        /* Updated Card Styles - Added transition property */
+        /* Updated Card Styles */
         .card {
             border: none;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease, transform 0.3s ease; /* Added transition property */
+            transition: all 0.3s ease, transform 0.3s ease;
             height: 100%;
             overflow: hidden;
             transform: scale(1);
@@ -219,7 +229,7 @@
             margin: 0.25rem;
         }
 
-        /* Updated Experience Cards - Now using standard card style */
+        /* Experience Cards */
         .experience-card {
             margin-bottom: 2rem;
         }
@@ -276,11 +286,11 @@
             display: block;
         }
 
-        /* Footer - Increased size */
+        /* Footer */
         .footer {
             background-color: var(--dark);
             color: white;
-            padding: 6rem 0 4rem; /* Increased padding */
+            padding: 6rem 0 4rem;
         }
 
         .footer h5 {
@@ -303,7 +313,21 @@
         }
 
         .footer-content {
-            min-height: 300px; /* Added minimum height */
+            min-height: 300px;
+        }
+
+        .footer .footer-links p {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .footer .footer-links p a {
+            margin: 0;
+        }
+
+        .footer .footer-links p i {
+            margin-right: 0.5rem;
         }
 
         /* Animation */
@@ -368,24 +392,13 @@
         }
 
         /* Contact Section */
-        .contact-form .form-control {
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            padding: 0.8rem 1rem;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .contact-form .form-control:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 0.2rem rgba(10, 102, 194, 0.25);
-        }
-
         .contact-info {
             background: white;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .contact-item {
@@ -405,6 +418,11 @@
             justify-content: center;
             margin-right: 1rem;
             flex-shrink: 0;
+        }
+        
+        .contact-center {
+            display: flex;
+            justify-content: center;
         }
 
         /* Responsive Adjustments */
@@ -435,16 +453,6 @@
 
             .navbar-brand {
                 font-size: 1.5rem;
-            }
-        }
-
-        @media (min-width: 992px) {
-            .contact-form-wrapper {
-                padding-right: 30px;
-            }
-
-            .contact-info-wrapper {
-                padding-left: 30px;
             }
         }
 
@@ -483,7 +491,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Main navigation">
         <div class="container">
-            <a class="navbar-brand" href="#">Nur Ahmed</a>
+            <a class="navbar-brand" href="#home">Nur Ahmed</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -504,9 +512,9 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Image column (appears first on mobile) -->
+                <!-- Image column -->
                 <div class="col-lg-6 text-center order-lg-2 animate-item">
-                    <img src="Candidate 1.jpg" alt="Alex Morgan" class="hero-img img-fluid">
+                    <img src="Candidate 1.jpg" alt="Nur Ahmed" class="hero-img img-fluid">
                 </div>
                 
                 <!-- Content column -->
@@ -519,11 +527,12 @@
                         <a href="#contact" class="btn btn-outline-primary">Contact Me</a>
                     </div>
                     <div class="social-icons animate-item delay-3">
-                        <a href="https://www.linkedin.com/in/nurahmed12/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/nurahmed12" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.kaggle.com/nurahmed12" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
-                        <a href="mailto: officialme.nurahmed@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="https://wa.link/iagj1j" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <!-- External links with target="_blank" -->
+                        <a href="https://www.linkedin.com/in/nurahmed12/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/nurahmed12" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.kaggle.com/nurahmed12" target="_blank" rel="noopener noreferrer" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+                        <a href="https://mail.google.com/mail/?view=cm&to=officialme.nurahmed@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://wa.link/3yerfe" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -679,7 +688,7 @@
                             <h5 class="card-title">Advanced Sentiment Analysis Using Transformer Networks</h5>
                             <p class="text-primary">International Conference on Data Science, 2023</p>
                             <p class="card-text">Proposed a novel approach to sentiment analysis using transformer networks that achieved state-of-the-art results on benchmark datasets.</p>
-                            <a href="#" class="btn btn-sm btn-outline-primary mt-2" aria-label="Read paper: Advanced Sentiment Analysis Using Transformer Networks">Read Paper</a>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener noreferrer" aria-label="Read paper: Advanced Sentiment Analysis Using Transformer Networks">Read Paper</a>
                         </div>
                     </div>
                 </div>
@@ -690,7 +699,7 @@
                             <h5 class="card-title">Optimizing Real-time Data Processing with Stream Architectures</h5>
                             <p class="text-primary">Journal of Big Data Analytics, 2022</p>
                             <p class="card-text">Presented a framework for optimizing real-time data processing that reduces latency by 35% while maintaining data integrity.</p>
-                            <a href="#" class="btn btn-sm btn-outline-primary mt-2" aria-label="Read paper: Optimizing Real-time Data Processing with Stream Architectures">Read Paper</a>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener noreferrer" aria-label="Read paper: Optimizing Real-time Data Processing with Stream Architectures">Read Paper</a>
                         </div>
                     </div>
                 </div>
@@ -701,7 +710,7 @@
                             <h5 class="card-title">Deep Learning for Medical Image Segmentation</h5>
                             <p class="text-primary">IEEE Transactions on Medical Imaging, 2022</p>
                             <p class="card-text">Developed a novel deep learning architecture for medical image segmentation that outperformed existing methods by 12% in accuracy.</p>
-                            <a href="#" class="btn btn-sm btn-outline-primary mt-2" aria-label="Read paper: Deep Learning for Medical Image Segmentation">Read Paper</a>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener noreferrer" aria-label="Read paper: Deep Learning for Medical Image Segmentation">Read Paper</a>
                         </div>
                     </div>
                 </div>
@@ -712,7 +721,7 @@
                             <h5 class="card-title">Blockchain-based Data Integrity Verification</h5>
                             <p class="text-primary">ACM Conference on Computer and Communications Security, 2021</p>
                             <p class="card-text">Designed a blockchain solution for verifying data integrity in distributed systems with 99.9% reliability.</p>
-                            <a href="#" class="btn btn-sm btn-outline-primary mt-2" aria-label="Read paper: Blockchain-based Data Integrity Verification">Read Paper</a>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener noreferrer" aria-label="Read paper: Blockchain-based Data Integrity Verification">Read Paper</a>
                         </div>
                     </div>
                 </div>
@@ -736,7 +745,6 @@
             </div>
 
             <div class="row">
-                <!-- Updated Experience Section - Now using card style -->
                 <div class="col-lg-6 mb-4 experience-card animate-item">
                     <div class="card h-100">
                         <div class="card-body">
@@ -823,37 +831,34 @@
                 <div class="col-lg-10 mx-auto">
                     <div class="education-card animate-item">
                         <div class="education-icon">
-                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                            <img src="DIU logo.png" alt="University Logo" class="edu-logo">
                         </div>
                         <div class="education-details">
-                            <h4>Bachelor of Science in Software Engineering</h4>
-                            <span class="text-primary">University of Technology</span>
-                            <p>Specialization: Data Science</p>
-                            <p>2020 - 2024 | GPA: 3.9/4.0</p>
+                            <h4>B.Sc. in Software Engineering major in Data Science</h4>
+                            <span class="text-primary">Daffodil International University</span>
+                            <p>2022 - 2026 | CGPA: 3.77/4.0</p>
                         </div>
                     </div>
 
-                    <div class="education-card animate-item delay-1">
+                    <div class="education-card animate-item">
                         <div class="education-icon">
-                            <i class="fas fa-certificate" aria-hidden="true"></i>
+                            <img src="Central College Logo.png" alt="University Logo" class="edu-logo">
                         </div>
                         <div class="education-details">
-                            <h4>Data Science Certificate</h4>
-                            <span class="text-primary">Stanford University Online</span>
-                            <p>Specialization: Machine Learning & AI</p>
-                            <p>2022 | Grade: Distinction</p>
+                            <h4>Higher Secondary School Certificate (HSC)</h4>
+                            <span class="text-primary">Narsingdi Central College</span>
+                            <p>2022 - 2026 | GPA: 4.92/5.0</p>
                         </div>
                     </div>
 
-                    <div class="education-card animate-item delay-2">
+                    <div class="education-card animate-item">
                         <div class="education-icon">
-                            <i class="fas fa-book" aria-hidden="true"></i>
+                            <img src="Satir Para School Logo.jpg" alt="University Logo" class="edu-logo">
                         </div>
                         <div class="education-details">
-                            <h4>Advanced Algorithms Course</h4>
-                            <span class="text-primary">MIT OpenCourseWare</span>
-                            <p>Specialization: Algorithm Design & Analysis</p>
-                            <p>2021 | Completed with Honors</p>
+                            <h4>Secondary School Certificate (SSC)</h4>
+                            <span class="text-primary">Satir Para K. K. Institution School and College</span>
+                            <p>2022 - 2026 | GPA: 4.78/5.0</p>
                         </div>
                     </div>
                 </div>
@@ -969,38 +974,8 @@
                 <p class="lead">Get in touch for collaboration or opportunities</p>
             </div>
 
-            <div class="row">
-                <div class="col-lg-6 contact-form-wrapper">
-                    <form class="contact-form" action="https://formsubmit.co/officialme.nurahmed@gmail.com" method="POST">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
-                        
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="nameInput" class="form-label visually-hidden">Your Name</label>
-                                    <input type="text" class="form-control" id="nameInput" name="name" placeholder="Your Name" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="emailInput" class="form-label visually-hidden">Your Email</label>
-                                    <input type="email" class="form-control" id="emailInput" name="email" placeholder="Your Email" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="subjectInput" class="form-label visually-hidden">Subject</label>
-                            <input type="text" class="form-control" id="subjectInput" name="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="messageTextarea" class="form-label visually-hidden">Your Message</label>
-                            <textarea class="form-control" id="messageTextarea" name="message" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-                <div class="col-lg-6 contact-info-wrapper mt-5 mt-lg-0">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
                     <div class="contact-info">
                         <div class="contact-item">
                             <div class="contact-icon">
@@ -1017,7 +992,12 @@
                             </div>
                             <div>
                                 <h5>Email</h5>
-                                <p>officialme.nurahmed@gmail.com</p>
+                                <p>
+                                    <!-- External link with target="_blank" -->
+                                    <a href="https://mail.google.com/mail/?view=cm&to=officialme.nurahmed@gmail.com" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                                        officialme.nurahmed@gmail.com
+                                    </a>
+                                </p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -1026,7 +1006,11 @@
                             </div>
                             <div>
                                 <h5>Phone</h5>
-                                <p>+880 1868039773</p>
+                                <p>
+                                    <a href="tel:+8801868039773" class="text-decoration-none">
+                                        +880 1868-039773
+                                    </a>
+                                </p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -1035,16 +1019,22 @@
                             </div>
                             <div>
                                 <h5>WhatsApp</h5>
-                                <p>+880 1868039773</p>
+                                <p>
+                                    <!-- External link with target="_blank" -->
+                                    <a href="https://wa.link/3yerfe" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                                        +880 1610-743279
+                                    </a>
+                                </p>
                             </div>
                         </div>
-                        <div class="mt-4">
+                        <div class="mt-4 contact-center">
                             <div class="social-icons">
-                                <a href="https://www.linkedin.com/in/nurahmed12/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="https://github.com/nurahmed12" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                                <a href="https://www.kaggle.com/nurahmed12" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
-                                <a href="mailto: officialme.nurahmed@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                                <a href="https://wa.link/iagj1j" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                                <!-- External links with target="_blank" -->
+                                <a href="https://www.linkedin.com/in/nurahmed12/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://github.com/nurahmed12" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="https://www.kaggle.com/nurahmed12" target="_blank" rel="noopener noreferrer" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+                                <a href="https://mail.google.com/mail/?view=cm&to=officialme.nurahmed@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                <a href="https://wa.link/3yerfe" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1057,14 +1047,15 @@
         <div class="container">
             <div class="row footer-content">
                 <div class="col-lg-4 mb-4">
-                    <h5>Alex Morgan</h5>
+                    <h5>Nur Ahmed</h5>
                     <p class="mt-3">Software Engineering student specializing in Data Science. Passionate about leveraging technology to solve complex problems and create meaningful impact.</p>
                     <div class="social-icons mt-4">
-                            <a href="https://www.linkedin.com/in/nurahmed12/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://github.com/nurahmed12" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="https://www.kaggle.com/nurahmed12" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
-                            <a href="mailto: officialme.nurahmed@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                            <a href="https://wa.link/iagj1j" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <!-- External links with target="_blank" -->
+                        <a href="https://www.linkedin.com/in/nurahmed12/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/nurahmed12" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.kaggle.com/nurahmed12" target="_blank" rel="noopener noreferrer" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+                        <a href="https://mail.google.com/mail/?view=cm&to=officialme.nurahmed@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://wa.link/3yerfe" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -1090,9 +1081,18 @@
                 <div class="col-lg-4 col-md-4 mb-4">
                     <h5>Contact Information</h5>
                     <div class="footer-links">
-                        <p><i class="fas fa-envelope me-2" aria-hidden="true"></i> officialme.nurahmed@gmail.com</p>
-                        <p><i class="fas fa-phone me-2" aria-hidden="true"></i> +880 1868039773</p>
-                        <p><i class="fab fa-whatsapp me-2" aria-hidden="true"></i> +880 1868039773</p>
+                        <p><i class="fas fa-envelope me-2" aria-hidden="true"></i> 
+                            <!-- External link with target="_blank" -->
+                            <a href="https://mail.google.com/mail/?view=cm&to=officialme.nurahmed@gmail.com" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-white">officialme.nurahmed@gmail.com</a>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <a href="tel:+8801868039773" class="text-decoration-none text-white">+880 1868-039773</a>
+                        </p>
+                        <p><i class="fab fa-whatsapp me-2" aria-hidden="true"></i> 
+                            <!-- External link with target="_blank" -->
+                            <a href="https://wa.link/3yerfe" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-white">+880 1610-743279</a>
+                        </p>
                         <p><i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i> Narsingdi, Dhaka, Bangladesh</p>
                     </div>
                 </div>
