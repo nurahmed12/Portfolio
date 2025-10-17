@@ -497,6 +497,64 @@
             color: white;
             transform: translateY(-3px);
         }
+
+        .tableau-thumb {
+            cursor: pointer;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+            display: block;
+        }
+
+        .tableau-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .tableau-modal .modal-content {
+            width: 94%;
+            max-width: 1200px;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+        }
+
+        .tableau-modal .close-btn {
+            position: absolute;
+            right: 12px;
+            top: 8px;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 2;
+            padding: 6px 10px;
+            background: transparent;
+            border: none;
+        }
+
+        .tableau-modal .iframe-wrap {
+            position: relative;
+            width: 100%;
+            padding-bottom: 68.9%;
+            /* matches 1200x827 aspect ratio used earlier */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .tableau-modal .iframe-wrap iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
     </style>
 </head>
 
@@ -534,7 +592,8 @@
                 <div class="col-lg-6 hero-content order-lg-1">
                     <h1 class="animate-item">Nur Ahmed</h1>
                     <h2 class="animate-item delay-1">Artificial Intelligence | Data Science | Software Engineering</h2>
-                    <p class="animate-item delay-2">Software Engineering, Artificial Intellignece, and Data Science enthusiast.
+                    <p class="animate-item delay-2">Software Engineering, Artificial Intellignece, and Data Science
+                        enthusiast.
                         Passionate about transforming complex data into actionable insights and building intelligent
                         systems that solve real-world problems.</p>
                     <div class="animate-item delay-3">
@@ -569,6 +628,49 @@
             </div>
 
             <div class="row">
+                <!-- START: Tableau Sales Dashboard card (paste right after Learning Progress Tracker card) -->
+                <div class="col-lg-4 col-md-6 mb-4 animate-item">
+                    <div class="card h-100">
+                        <!-- Thumbnail triggers modal -->
+                        <img id="openTableauSales"
+                            src="https://public.tableau.com/static/images/Sa/SalesCustomerDashboardProject_17607342900400/SalesDashboard/1_rss.png"
+                            class="card-img-top img-fluid tableau-thumb"
+                            alt="Sales Dashboard — click to open interactive" />
+
+                        <div class="card-body">
+                            <h5 class="card-title">Dynamic and Interactive Sales & Customer Dashboard in Tableau</h5>
+                            <p class="card-text">A pair of interactive Tableau dashboards that transform transactional
+                                sales data into clear business insights. The
+                                dashboards surface key performance indicators (Total Sales, Profit, Quantity, Orders,
+                                Customers), monthly trends vs
+                                prior year, top-performing products/subcategories, and top customers — all with
+                                interactive filters and navigation to
+                                support fast decision-making.</p>
+                            <div class="mt-3">
+                                <span class="tag">Tableau</span>
+                                <span class="tag">Data Visualization</span>
+                                <span class="tag">BI</span>
+                            </div>
+                        </div>
+
+                        <div class="card-footer bg-white border-0">
+                            <a href="https://public.tableau.com/views/SalesCustomerDashboardProject_17607342900400/SalesDashboard?:showVizHome=no&:embed=true"
+                                class="btn btn-sm btn-primary" target="_blank" rel="noopener">Open Full</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal (can be placed once per page) -->
+                <div id="tableauModalSales" class="tableau-modal" role="dialog" aria-hidden="true">
+                    <div class="modal-content" role="document">
+                        <button class="close-btn" aria-label="Close">✕</button>
+                        <div class="iframe-wrap" id="iframeWrapSales">
+                            <!-- iframe is injected here on click (lazy loaded) -->
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Tableau Sales Dashboard card -->
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100 animate-item">
                         <img src="YT-Comment-Extractor-Project.png" class="card-img-top img-fluid"
@@ -1151,8 +1253,8 @@
                 <div class="col-lg-4 mb-4">
                     <h5>Nur Ahmed</h5>
                     <p class="mt-3">Software Engineering, Artificial Intellignece, and Data Science enthusiast.
-                    Passionate about transforming complex data into actionable insights and building intelligent
-                    systems that solve real-world problems.</p>
+                        Passionate about transforming complex data into actionable insights and building intelligent
+                        systems that solve real-world problems.</p>
                     <div class="social-icons mt-4">
                         <!-- External links with target="_blank" -->
                         <a href="https://www.linkedin.com/in/nurahmed12/" target="_blank" rel="noopener noreferrer"
