@@ -628,17 +628,54 @@
             </div>
 
             <div class="row">
-                <!-- START: Tableau Sales Dashboard card (paste right after Learning Progress Tracker card) -->
+                <div class="col-lg-4 col-md-6 mb-4 animate-item">
+                    <div class="card h-100">
+                        <!-- Thumbnail triggers modal -->
+                        <img id="openTableauSales"
+                            src="https://public.tableau.com/static/images/HR/HRDashboard_17610578646510/HRSummary/1_rss.png"
+                            class="card-img-top img-fluid" alt="HR Dashboard — click to open interactive" />
+
+                        <div class="card-body">
+                            <h5 class="card-title">HR Dashboard — Workforce Summary (Tableau)</h5>
+                            <p class="card-text">Interactive HR dashboard summarizing headcount, hiring & attrition
+                                trends, and workforce KPIs. Designed to help HR teams
+                                monitor staffing health and identify retention risks through trend charts, KPI tiles,
+                                and departmental breakdowns.</p>
+                            <div class="mt-3">
+                                <span class="tag">Tableau</span>
+                                <span class="tag">HR Analytics</span>
+                                <span class="tag">Data Analysis</span>
+                                <span class="tag">Data Visualization</span>
+                                <span class="tag">BI</span>
+                            </div>
+                        </div>
+
+                        <div class="card-footer bg-white border-0">
+                            <a href="https://public.tableau.com/views/HRDashboard_17610578646510/HRSummary?:showVizHome=no&:embed=true"
+                                class="btn btn-sm btn-primary" target="_blank" rel="noopener">Open Full</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal (can be placed once per page) -->
+                <div id="tableauModalSales" class="tableau-modal" role="dialog" aria-hidden="true">
+                    <div class="modal-content" role="document">
+                        <button class="close-btn" aria-label="Close">✕</button>
+                        <div class="iframe-wrap" id="iframeWrapSales">
+                            <!-- iframe is injected here on click (lazy loaded) -->
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Tableau Sales Dashboard card -->
                 <div class="col-lg-4 col-md-6 mb-4 animate-item">
                     <div class="card h-100">
                         <!-- Thumbnail triggers modal -->
                         <img id="openTableauSales"
                             src="https://public.tableau.com/static/images/Sa/SalesCustomerDashboardProject_17607342900400/SalesDashboard/1_rss.png"
-                            class="card-img-top img-fluid tableau-thumb"
-                            alt="Sales Dashboard — click to open interactive" />
+                            class="card-img-top img-fluid" alt="Sales Dashboard — click to open interactive" />
 
                         <div class="card-body">
-                            <h5 class="card-title">Dynamic and Interactive Sales & Customer Dashboard in Tableau</h5>
+                            <h5 class="card-title">Dynamic and Interactive Sales & Customer Dashboard (Tableau)</h5>
                             <p class="card-text">A pair of interactive Tableau dashboards that transform transactional
                                 sales data into clear business insights. The
                                 dashboards surface key performance indicators (Total Sales, Profit, Quantity, Orders,
@@ -648,6 +685,7 @@
                                 support fast decision-making.</p>
                             <div class="mt-3">
                                 <span class="tag">Tableau</span>
+                                <span class="tag">Data Analysis</span>
                                 <span class="tag">Data Visualization</span>
                                 <span class="tag">BI</span>
                             </div>
@@ -673,10 +711,38 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100 animate-item">
-                        <img src="YT-Comment-Extractor-Project.png" class="card-img-top img-fluid"
+                        <img src="Task-Manager.png" class="card-img-top img-fluid" alt="Task Manager Laravel Project">
+                        <div class="card-body">
+                            <h5 class="card-title">Task Manager (Laravel)</h5>
+                            <p class="card-text">A web-based Task Manager built with Laravel for creating, assigning,
+                                and tracking
+                                tasks. Includes user authentication, task CRUD, task assignment, dashboard and profile
+                                management.
+                                Implemented with MVC, Eloquent, and MySQL for secure, maintainable, and testable
+                                delivery.</p>
+                            <div class="mt-3">
+                                <span class="tag">Laravel</span>
+                                <span class="tag">PHP</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">MVC</span>
+                                <span class="tag">Task Management</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <a href="https://github.com/nurahmed12/TaskManager" class="btn btn-sm btn-primary"
+                                aria-label="View details for Task Manager (Laravel project)" target="_blank">Open
+                                Full</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 animate-item">
+                        <img src="YT-Comment-Extractor-Project.jpg" class="card-img-top img-fluid"
                             alt="YouTube Comment Extractor">
                         <div class="card-body">
-                            <h5 class="card-title">YouTube Comment Extraction & Classification</h5>
+                            <h5 class="card-title">YouTube Comment Extraction & Classification (Python)</h5>
                             <p class="card-text"> A Python-based project which interacts with the YouTube Data API in
                                 order to mine top-level
                                 comment, filter Bangla text, and do basic sentiment labeling as well as export the
@@ -694,7 +760,7 @@
                             <a href="https://github.com/nurahmed12/YouTube-Comment-Extractor"
                                 class="btn btn-sm btn-primary"
                                 aria-label="View details for YouTube Comment Extraction & Classification"
-                                target="_blank">View Details</a>
+                                target="_blank">Open Full</a>
                         </div>
                     </div>
                 </div>
@@ -704,7 +770,7 @@
                         <img src="Dragon-Ball-Super-Project.png" class="card-img-top img-fluid"
                             alt="Dragon Ball Super Characters">
                         <div class="card-body">
-                            <h5 class="card-title">Dragon Ball Super Console Game</h5>
+                            <h5 class="card-title">Dragon Ball Super Console Game (Java)</h5>
                             <p class="card-text">A console game based on the Dragon Ball Super series with a lot of
                                 features.
                                 It was created by following Object-Oriented Programming of Java. It was developed to
@@ -719,18 +785,18 @@
                         <div class="card-footer bg-white border-0">
                             <a href="https://github.com/nurahmed12/Dragon-Ball-Super-Game"
                                 class="btn btn-sm btn-primary"
-                                aria-label="View details for Dragon Ball Super Console Game" target="_blank">View
-                                Details</a>
+                                aria-label="View details for Dragon Ball Super Console Game" target="_blank">Open
+                                Full</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="col-lg-4 col-md-6 mb-4 hidden-item">
                     <div class="card h-100 animate-item">
                         <img src="Learning-Progress-Tracker.png" class="card-img-top img-fluid"
                             alt="Learning Progress Tracker">
                         <div class="card-body">
-                            <h5 class="card-title">Learning Progress Tracker</h5>
+                            <h5 class="card-title">Learning Progress Tracker (GitHub)</h5>
                             <p class="card-text">
                                 A GitHub-hosted multi-roadmap learning tracker for my personal development journey.
                                 Features a customizable Markdown checklist (CHECKLIST.md),
@@ -748,7 +814,7 @@
                             <a href="https://github.com/nurahmed12/Learning-Progress-Tracker"
                                 class="btn btn-sm btn-primary" aria-label="View details for Learning Progress Tracker"
                                 target="_blank">
-                                View Details
+                                Open Full
                             </a>
                         </div>
                     </div>
@@ -759,7 +825,7 @@
                         <img src="Obstacle Avoiding Robot Project.jpg" class="card-img-top img-fluid"
                             alt="Obstacle-Avoiding Robot">
                         <div class="card-body">
-                            <h5 class="card-title">Obstacle-Avoiding Robot</h5>
+                            <h5 class="card-title">Obstacle-Avoiding Robot (Arduino)</h5>
                             <p class="card-text">An autonomous robot that uses a servo-mounted ultrasonic sensor
                                 to detect obstacles and decide which direction will be the best route, and then navigate
                                 by turning left, right, or executing a U-turn
@@ -774,7 +840,7 @@
                         <div class="card-footer bg-white border-0">
                             <a href="https://github.com/nurahmed12/Obstacle-Avoiding-Robot"
                                 class="btn btn-sm btn-primary" aria-label="View details for Object Detection System"
-                                target="_blank">View Details</a>
+                                target="_blank">Open Full</a>
                         </div>
                     </div>
                 </div>
@@ -784,7 +850,7 @@
                         <img src="Console Based Banking System project.png" class="card-img-top img-fluid"
                             alt="Banking Management System">
                         <div class="card-body">
-                            <h5 class="card-title">Console-Based Banking System</h5>
+                            <h5 class="card-title">Console-Based Banking System (C)</h5>
                             <p class="card-text"> A C-language banking application supporting account creation,
                                 deposits, withdrawals, and balance checks. Designed for command-line use, featuring
                                 robust input validation and data management for up to 10 user accounts.</p>
@@ -798,8 +864,8 @@
                         <div class="card-footer bg-white border-0">
                             <a href="https://github.com/nurahmed12/Banking-System-Capstone-Project"
                                 class="btn btn-sm btn-primary"
-                                aria-label="View details for Banking Management System (Console)" target="_blank">View
-                                Details</a>
+                                aria-label="View details for Banking Management System (Console)" target="_blank">Open
+                                Full</a>
                         </div>
                     </div>
                 </div>
@@ -933,7 +999,7 @@
                                 University</p>
                             <p class="experience-date">Jan 2024 - Dec 2024</p>
                             <p class="card-text">
-                                Assisted supervisor (Afsana Begum) in delivering lectures, conducting lab
+                                Assisted my supervisor (Afsana Begum) in delivering lectures, conducting lab
                                 sessions, and grading assignments for undergraduate software engineering courses.
                                 Provided one-on-one support to students, developed tutorial materials, and coordinated
                                 project demonstrations.
